@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Risk Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 40px;
+        }
+        .card {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🩺 Diabetes Risk Predictor</h2>
+
+    <form method="post">
+        <input name="pregnancies" placeholder="Pregnancies" required>
+        <input name="glucose" placeholder="Glucose" required>
+        <input name="blood_pressure" placeholder="Blood Pressure" required>
+        <input name="skin_thickness" placeholder="Skin Thickness" required>
+        <input name="insulin" placeholder="Insulin" required>
+        <input name="bmi" placeholder="BMI" required>
+        <input name="dpf" placeholder="Diabetes Pedigree Function" required>
+        <input name="age" placeholder="Age" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <p><strong>Risk:</strong> {{ result.risk }}</p>
+        <p><strong>Prediction:</strong> {{ result.probability }}%</p>
+        <p><strong>Model Test Accuracy:</strong> {{ result.accuracy }}%</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
