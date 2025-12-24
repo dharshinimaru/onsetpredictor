@@ -30,8 +30,9 @@ _, test_accuracy = model.evaluate(X_test, y_test, verbose=0)
 # -------------------------------
 # Streamlit UI
 # -------------------------------
-st.title("🩺 Diabetes Risk Predictor")
+st.title("🩺 Diabetes Risk Predictor -- Pima Native American Tribe")
 
+st.write("Data is based off the overall population health of the Pima Native American tribe.")
 st.write("Enter your health information below:")
 
 pregnancies = st.number_input("Number of pregnancies", min_value=0, value=0)
